@@ -1,9 +1,9 @@
-resource "aws_s3_bucket" "first_bucket" {
+resource "aws_s3_bucket" "bucket01" {
   bucket = "bucket01-remote-state"
 }
 
 resource "aws_s3_bucket_versioning" "versioning" {
-  bucket = aws_s3_bucket.first_bucket.id
+  bucket = aws_s3_bucket.bucket01.id
   versioning_configuration {
     status = "Enabled"
   }

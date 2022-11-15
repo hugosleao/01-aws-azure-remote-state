@@ -1,5 +1,4 @@
 terraform {
-
   required_version = ">=1.0.0"
 
   required_providers {
@@ -7,11 +6,10 @@ terraform {
       source  = "hashicorp/aws"
       version = "4.15.1"
     }
-  }
-  backend "s3" {
-    bucket = "bucket01-remote-state"
-    key    = "aws-vpc"
-    region = "us-east-1"
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "3.25.0"
+    }
   }
 }
 
